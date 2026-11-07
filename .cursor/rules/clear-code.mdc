@@ -1,0 +1,23 @@
+---
+description: Write Integratr code as ordered blocks a reader can follow top to bottom
+alwaysApply: true
+---
+
+# Clear ordered code
+
+Write code Mohammad can read from top to bottom while learning.
+
+- One job per block. Put the steps in the order they run.
+- Use full names. Say what the block does in a sentence above it.
+- Keep each step visible. Do not hide the flow in helpers that only save lines.
+- Prefer a straight sequence over a compact or clever form.
+
+```python
+# Step 1. Check the contract version before touching the database.
+if body.get("engineApi") != "1":
+    return reject("engineApi must be \"1\".")
+
+# Step 2. Reject an id that is already registered.
+if store.pipe_exists(pipe_id):
+    return reject("id is already registered.")
+```

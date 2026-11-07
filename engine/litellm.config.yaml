@@ -1,0 +1,49 @@
+# LiteLLM proxy config for the Integratr Engine.
+#
+# This file is the Gateway. Model aliases are the only names a Pipe is allowed
+# to ask for. Provider model ids and provider keys stay in this file.
+#
+# The database URL is required. LiteLLM does not enforce key, team, or budget
+# limits when no database is connected.
+
+model_list:
+  # Block 1. Chat alias.
+  - model_name: chat-default
+    litellm_params:
+      model: os.environ/CHAT_DEFAULT_MODEL
+      api_key: os.environ/CHAT_DEFAULT_API_KEY
+
+  # Block 2. Image alias.
+  - model_name: image-default
+    litellm_params:
+      model: os.environ/IMAGE_DEFAULT_MODEL
+      api_key: os.environ/IMAGE_DEFAULT_API_KEY
+
+  # Block 3. Embedding alias.
+  - model_name: embed-default
+    litellm_params:
+      model: os.environ/EMBED_DEFAULT_MODEL
+      api_key: os.environ/EMBED_DEFAULT_API_KEY
+
+  # Block 4. Speech alias.
+  - model_name: speech-default
+    litellm_params:
+      model: os.environ/SPEECH_DEFAULT_MODEL
+      api_key: os.environ/SPEECH_DEFAULT_API_KEY
+
+  # Block 5. Transcription alias.
+  - model_name: transcribe-default
+    litellm_params:
+      model: os.environ/TRANSCRIBE_DEFAULT_MODEL
+      api_key: os.environ/TRANSCRIBE_DEFAULT_API_KEY
+
+litellm_settings:
+  # Keep prompt text and model output out of the proxy logs.
+  # Metadata and token usage are still logged.
+  turn_off_message_logging: true
+  json_logs: true
+
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY
+  # Required. Do not delete this line to "simplify" a local run.
+  database_url: os.environ/DATABASE_URL
