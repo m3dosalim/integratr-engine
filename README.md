@@ -1,4 +1,4 @@
-<img width="2000" height="2000" alt="Green Black Professional Minimal Fashion Brand Logo" src="https://github.com/user-attachments/assets/9d24593b-de05-4d45-9b64-a817df7e74fe" />
+<img width="2000" height="1000" alt="Green Black Professional Minimal Fashion Brand Logo" src="https://github.com/user-attachments/assets/9d24593b-de05-4d45-9b64-a817df7e74fe" />
 
 
 Integratr is a self-hosted AI backend. Your app is the screen. Integratr is the door behind it.
